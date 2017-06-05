@@ -38,7 +38,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
         <p>{{view.details.tagline}}</p>
         <br>
         <p>{{view.details.overview}}</p>
-        <p>{{view.details.homepage}}</p>
+        <span ng-if="view.details.homepage"><a href="{{ view.details.homepage }}" target=_new 
+        style="color: #FFBF00">{{ view.details.homepage }}</a></span>
 
         <div>
 	        <div class="col-md-6">
@@ -97,8 +98,28 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
 <div class="col-md-12" 
 	style="
 		height: 500px;
-		background: red;
+		background: #151515;
+		/*background: rgba(173,173,173,1);
+background: -moz-linear-gradient(top, rgba(173,173,173,1) 0%, rgba(255,255,255,1) 14%, rgba(230,230,230,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(173,173,173,1)), color-stop(14%, rgba(255,255,255,1)), color-stop(100%, rgba(230,230,230,1)));
+background: -webkit-linear-gradient(top, rgba(173,173,173,1) 0%, rgba(255,255,255,1) 14%, rgba(230,230,230,1) 100%);
+background: -o-linear-gradient(top, rgba(173,173,173,1) 0%, rgba(255,255,255,1) 14%, rgba(230,230,230,1) 100%);
+background: -ms-linear-gradient(top, rgba(173,173,173,1) 0%, rgba(255,255,255,1) 14%, rgba(230,230,230,1) 100%);
+background: linear-gradient(to bottom, rgba(173,173,173,1) 0%, rgba(255,255,255,1) 14%, rgba(230,230,230,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#adadad', endColorstr='#e6e6e6', GradientType=0 );*/
 	">
+
+	<div>
+	    
+	    <div ng-repeat="similar in view.details.similar.results | limitTo: 11">
+	        <div style="float: left; margin: 5px; ">
+	            <a href="#/movie/{{ similar.id }}" title="{{ similar.title }}">
+	                <img src="{{view.images}}{{ similar.poster_path }}" width="100" height="150" title="{{ similar.title }}" />
+	            </a>
+	        </div>
+	    </div>
+	    <h3 align="center" style="color: #A4A4A4;">{{"Similar Movies"}}</h3>
+	</div>
 	
 </div>
 </div>
