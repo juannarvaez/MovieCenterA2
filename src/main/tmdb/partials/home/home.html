@@ -1,0 +1,17 @@
+<!-- <div>
+	<h1>HOLA</h1>
+    <h1 ng-if="view.movies.results">Explore Popular Movies VMR</h1>
+    <div ng-repeat="movie in view.movies.results track by $index">
+        <a href="#/movie/{{ movie.id }}" title="{{ movie.title }}" ng-if="movie.poster_path">
+            <img style="float: left; margin: 10px;" src="{{view.images}}{{ movie.poster_path }}" width="150" height="225" title="{{ movie.title }}" />
+        </a>
+    </div>
+</div> -->
+
+<div>
+	<h1>HOLA</h1>
+    <h1 ng-if="view.movies.results">Explore Popular Movies VMR</h1>
+    <div ng-repeat="movie in view.movies.results track by $index">
+        <movie-tile ng-model="movie" even="$even"/>
+    </div>
+</div>

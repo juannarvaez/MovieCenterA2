@@ -1,0 +1,105 @@
+<div class="col-md-12" 
+	style="
+	background-image: url({{'https:'}}{{view.images}}{{ view.details.poster_path }}) ;
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	/*background-size: 600px 900px; */
+	background-size: 500px 750px;
+	padding: 0px;
+	outline: 1px solid red;
+
+	" >
+<div class="col-md-12"  style="
+
+	width: : 100%;
+	height: 680px;
+	background: rgba(0,0,0,0.4);
+background: -moz-linear-gradient(left, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.64) 15%, rgba(0,0,0,1) 38%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(0,0,0,0.4)), color-stop(15%, rgba(0,0,0,0.64)), color-stop(38%, rgba(0,0,0,1)));
+background: -webkit-linear-gradient(left, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.64) 15%, rgba(0,0,0,1) 38%);
+background: -o-linear-gradient(left, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.64) 15%, rgba(0,0,0,1) 38%);
+background: -ms-linear-gradient(left, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.64) 15%, rgba(0,0,0,1) 38%);
+background: linear-gradient(to right, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.64) 15%, rgba(0,0,0,1) 38%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=1 );
+">
+
+    <!-- <div>
+    	<p>{{view.images}}{{ view.details.poster_path }}</p>
+    </div> -->
+
+	<div class="col-md-7" 
+		style="
+		color:white;
+		padding-top: 300px;
+
+		">
+
+        <h1>{{ view.details.title | uppercase }} </h1>
+        <p>{{view.details.tagline}}</p>
+        <br>
+        <p>{{view.details.overview}}</p>
+        <p>{{view.details.homepage}}</p>
+
+        <div>
+	        <div class="col-md-6">
+	            <div class="detail">
+	                Release Date {{ view.details.release_date | date }}
+	            </div>
+	            <div class="detail">
+	                Running Time {{ view.details.runtime }} minutes
+	            </div>
+	        </div>
+	        <div class="col-md-6">
+	            <div class="detail">
+	                Budget ${{ view.details.budget | number }} USD
+	            </div>
+	            <div class="detail">
+	                Revenue ${{ view.details.revenue | number }} USD
+	            </div>
+	        </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+        <p ng-repeat="gen in view.details.genres" style="float: left; padding-right: 10px;">{{gen.name}} </p>
+        
+        <br>
+
+        <h2>{{ view.details.original_language }}</h2>
+    </div>
+    <div class="col-md-5" >
+
+    	<br>
+    	<br>
+    	
+    	<div>
+    		<img src="{{view.images}}{{ view.details.backdrop_path }}"	      
+	        width="95%" />
+    	</div>
+
+    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+    	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+</div>
+<div class="col-md-12" 
+	style="
+		height: 500px;
+		background: red;
+	">
+	
+</div>
+</div>
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>TMDB API Programming Test</title>
+
+<!-- Default Styles (DO NOT TOUCH) -->
+<!-- <link rel="stylesheet" type="text/css" href="/css/app.css"> -->
+<!-- RequireJS // -->
+<meta name="viewport" content="width=device-width,initial-scale=1,maximun-scale-1"/>
+<link rel="stylesheet" type="text/css" href="/vendor/bootstrap/dist/css/bootstrap.css"/>
+<script src="/vendor/requirejs/require.js" data-main="main"></script>
+</head>
+<body>
+	<div class="wrapper" >
+		<div class="navbar nav" style="margin: 0px;" ng-hide="true">
+			<div class="container-fluid">
+				<div style="position: absolute; top: 0; left: 0; z-index: 50; font-size: 24px; margin-top: 0px; margin-left: 0px;">
+					<a href="#/" title="Start Over">TITULO PAGINA</a>
+				</div>
+				<div class="pull-right" style="margin: 0px;">
+            		<search />
+        		</div>
+			</div>
+		</div>
+		<div class="contain">
+			<!-- BEGIN PAGE CONTENT -->
+			<div class="content">
+				
+				<div protected-content>
+
+					<ng-view></ng-view> <!-- ESTA ES LA PARTE DINAMICA DONDE SE PINTA EL CONTENIDO-->
+				</div>
+			</div>
+			<!-- END PAGE CONTENT -->
+		</div>
+	</div>
+
+	<!-- Default JS (DO NOT TOUCH) -->
+	<!-- <script src="/vendor/jquery/dist/jquery.min.js?bust=release.version"></script> -->
+	<!-- <script src="/vendor/bootstrap/dist/js/bootstrap.min.js?bust=release.version"></script> -->
+</body>
+</html>
