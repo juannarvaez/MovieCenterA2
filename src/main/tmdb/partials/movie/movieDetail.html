@@ -30,6 +30,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
 		width: 40%;
 		height: 750px;
 		color:white;
+		padding: 10px;
 		padding-top: 300px;
 		float: left;
 		outline: 1px solid red;
@@ -77,10 +78,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
     	<br>
     	<br>
     	
-    	<div>
+    	<div align="center">
     		<img src="{{view.images}}{{ view.details.backdrop_path }}"	      
-	        width="95%" />
+	        width="85%" />
     	</div>
+
+    	<br>
 
     	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
     	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -151,7 +154,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
 	    			border: none;
 	    			height: 20%;
 	    			left: 0px;
-	    		"> 
+	    		"
+	    		ng-click = "movieSlider('left')"> 
 	    	< 
 	    </button>
 	    <button class="bt_right"
@@ -163,7 +167,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
 	    			height: 20%;
 	    			right: 0px;
 
-	    		"> 
+	    		"
+	    		ng-click = "movieSlider('right')"> 
 	    	> 
 	    </button>
 	</div>

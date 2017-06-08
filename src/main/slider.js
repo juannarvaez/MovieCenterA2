@@ -5,7 +5,7 @@ $(document).on('ready', function(){
 	$('.bt_left').on('click', function(e){
 		e.preventDefault();
 		moveSlider('left');
-
+		console.log("en el click left");
 	});
 
 	console.log("paso por el bt_left");
@@ -20,7 +20,7 @@ $(document).on('ready', function(){
 
 	console.log("Hola k ase");
 
-	var mensaje = $('.form_container').position();
+	var mensaje = $('.form_container .slide').length;
 	console.log(mensaje);
 
 });
