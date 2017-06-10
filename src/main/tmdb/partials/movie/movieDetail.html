@@ -1,4 +1,8 @@
-
+<div class="col-md-12" 
+	style="
+		background: black;
+		padding: 0px;
+		">
 
 <div class="col-md-12" 
 	style="
@@ -8,7 +12,7 @@
 	/*background-size: 600px 900px; */
 	background-size: 500px 750px;
 	padding: 0px;
-	outline: 1px solid red;
+	/*outline: 1px solid red;*/
 
 	" >
 <div class="col-md-12"  style="
@@ -27,13 +31,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
 
 	<div 
 		style="
-		width: 40%;
+		width: 43%;
 		height: 750px;
 		color:white;
 		padding: 10px;
 		padding-top: 300px;
 		float: left;
-		outline: 1px solid red;
+		/*outline: 1px solid red;*/
 
 		">
 
@@ -73,40 +77,50 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
 
         <h2>{{ view.details.original_language }}</h2>
     </div>
-    <div style="width: 60%; height: 750px; float: left; outline: 1px solid blue;" >
+    <div style="
+    	width: 57%; 
+    	height: 750px; 
+    	float: left; 
+    	/*outline: 1px solid blue;*/
+    	" >
 
     	<br>
     	<br>
     	
     	<div align="center">
-    		<img src="{{view.images}}{{ view.details.backdrop_path }}"	      
-	        width="85%" />
-    	</div>
-
+    		<iframe width="560" height="315" 
+    			ng-src="{{trailer }}" frameborder="0">
+    		</iframe>
+    	</div>	
+ 		
     	<br>
 
-    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-    	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
 </div>
+
+
+
 <div class="col-md-12" 
 	style="
 		padding: 0px;
 		height: 500px;
 		background: #151515;
 	">
-
+	<div class="col-md-12" style="
+			
+			position: absolute;
+			top: -20px;
+			left: 39.5%;
+			width: 23%;
+			height: 0px;
+			border-top-right-radius: 50%;
+			border-top-left-radius: 50%;
+			border-bottom: 20px solid #151515;
+			border-left: 40px solid transparent;
+			border-right: 40px solid transparent;
+		">
+		<p align="center" style="color: white; font-size: 20px;">{{"Similar Movies"}}</p>	
+	</div>
 	<div class="form_container"
 			style="
 				padding-top: 10px;
@@ -172,9 +186,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
 	    	> 
 	    </button>
 	</div>
-	<h3 align="center" style="color: #A4A4A4;">{{"Similar Movies"}}</h3>
+	
 
 	
 </div>
 </div>
-
+</div>
