@@ -101,29 +101,36 @@
 			padding: 0px;
 			width: 73%;
 			left: 14%;
-			outline: 1px solid red;
+			/*outline: 1px solid red;*/
 			">
     		<div  ng-repeat="actor in view.details.credits.cast | limitTo: 5" style="
-    		 	width:  18.5%;
-    		 	padding-top: 18.5%;
+    		 	width:  18.1%;
+    		 	padding-top: 14.1%;
     		 	background-image: url({{'https:'}}{{view.images}}{{actor.profile_path}});
     		 	float: left;
     		 	margin-left: 7px;
     		 	background-size: 100px 150px;
     		 	background-position: 0px -10px;
     		 	background-repeat: no-repeat;
-    		 	outline: 1px solid blue;
+    		 	outline: 1px solid rgba(255, 255,255, 0.1);
     		 	color: white;
     		">
-    			<div>
+    			<div style="
+	    				background-color:rgba(0, 0, 0, 0.5); 
+	    				width: 100%; 
+	    				height: 20px;
+	    				position: relative;
+
+    				">
     				<p  style="
-    					background-color:rgba(0, 0, 0, 0.1);
-    					width: 100%;
+    					
+    					
 	    				position:absolute; 
-	    				top: 75px;
+	    				bottom:1px;
 	    				padding: 0px; 
 	    				margin: 0px;
 	    				font-size: 100%; 
+	    				/*outline: 1px solid green;*/
 	    				
 
 	    			">
