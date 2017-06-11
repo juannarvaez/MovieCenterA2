@@ -20,8 +20,7 @@ define( [ 'angular',
 
                 var index =  $scope.view.details.videos.results.length;
                 var results = $scope.view.details.videos.results;
-                console.log(index);
-                console.log(results);
+
 
                 for (var i = 0; i < index; i++) {
                     if( results[i].type == "Trailer"){
