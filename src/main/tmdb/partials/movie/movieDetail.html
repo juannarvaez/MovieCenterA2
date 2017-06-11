@@ -35,47 +35,68 @@
 		height: 750px;
 		color:white;
 		padding: 10px;
-		padding-top: 300px;
 		float: left;
 		/*outline: 1px solid red;*/
 
 		">
+		<div style="
+			width: 43%;
+			position: absolute;
+			bottom: 0px;
+			">
 
-        <h1>{{ view.details.title | uppercase }} </h1>
-        <p>{{view.details.tagline}}</p>
-        <br>
-        <p>{{view.details.overview}}</p>
-        <span ng-if="view.details.homepage"><a href="{{ view.details.homepage }}" target=_new 
-        style="color: #FFBF00">{{ view.details.homepage }}</a></span>
+	        <h1 style="margin: 0px; padding: 0px;">{{ view.details.title | uppercase }} </h1>
+	        <p style="color: rgba(255,255,255,0.7);"><i>{{view.details.tagline}}</i></p>
+	        
+	        <br>
+	        
+	        <p>{{view.details.overview}}</p>
+	        <span ng-if="view.details.homepage"><a href="{{ view.details.homepage }}" target=_new 
+	        style="color: #FFBF00">{{ view.details.homepage }}</a></span>
+	        
+	        <br>
+	        <br>
 
-        <div>
-	        <div class="col-md-6">
-	            <div class="detail">
-	                Release Date {{ view.details.release_date | date }}
-	            </div>
-	            <div class="detail">
-	                Running Time {{ view.details.runtime }} minutes
-	            </div>
+	        <div>
+		        <div class="col-md-6">
+		            <div class="detail">
+		                Release Date {{ view.details.release_date | date }}
+		            </div>
+		            <div class="detail">
+		                Running Time {{ view.details.runtime }} minutes
+		            </div>
+		        </div>
+		        <div class="col-md-6">
+		            <div class="detail">
+		                Budget ${{ view.details.budget | number }} USD
+		            </div>
+		            <div class="detail">
+		                Revenue ${{ view.details.revenue | number }} USD
+		            </div>
+		        </div>
 	        </div>
-	        <div class="col-md-6">
-	            <div class="detail">
-	                Budget ${{ view.details.budget | number }} USD
-	            </div>
-	            <div class="detail">
-	                Revenue ${{ view.details.revenue | number }} USD
-	            </div>
-	        </div>
+
+	        <br>
+	        <br>
+	        <br>
+
+	        <p ng-repeat="gen in view.details.genres" 
+	        	style="
+	        		float: left; 
+	        		margin-right: 10px;
+	        		margin-bottom: 0px;
+	        		padding-left: 5px;
+	        		padding-right: 5px; 
+	        		border-radius: 10%;
+	        		background-color: rgba(255,255,255, 0.1);
+	        	">
+	        	{{gen.name}} 
+	        </p>
+	        
+	        <br>
+
+	        <h2>{{ view.details.original_language }}</h2>
         </div>
-
-        <br>
-        <br>
-        <br>
-
-        <p ng-repeat="gen in view.details.genres" style="float: left; padding-right: 10px;">{{gen.name}} </p>
-        
-        <br>
-
-        <h2>{{ view.details.original_language }}</h2>
     </div>
 
 <!--  ====================DETAIL IZQUIERDA =========================-->	
@@ -89,13 +110,32 @@
 
     	<br>
     	<br>
-    	
-    	<div align="center">
-    		<iframe width="560" height="315" 
-    			ng-src="{{trailer }}" frameborder="0">
-    		</iframe>
-    	</div>	
+    	<div  style="width: 70%; position: relative; left: 15%;">
+	    	<div style="
+	    			height: 0;
+	    			padding-bottom: 56.25%;
+	    			margin:1%;
+	    			position: relative;
+	    			/*outline: 1px solid blue;*/
+	    		">
+	    		<iframe width="560" height="315" 
+	    			ng-src="{{trailer }}" frameborder="0" style="
+	    				position: absolute;
+	    				top: 0;
+	    				left: 0;
+	    				width: 100%;
+	    				height: 100%;
+	    			">
+	    		</iframe>
+	    	</div>	
+    	</div>
+    	<br>
  		<!-- ========================= ACTORES DE PELICULA  ======================= -->
+		<div align="center">
+			<p style="color:white; ">
+				IMPORTANT CAST
+			</p>
+		</div>
 		<div style="
 			position: relative;
 			padding: 0px;
@@ -103,7 +143,7 @@
 			left: 14%;
 			/*outline: 1px solid red;*/
 			">
-    		<div  ng-repeat="actor in view.details.credits.cast | limitTo: 5" style="
+    		<div  ng-repeat="actor in view.details.credits.cast | limitTo: 10" style="
     		 	width:  18.1%;
     		 	padding-top: 14.1%;
     		 	background-image: url({{'https:'}}{{view.images}}{{actor.profile_path}});
