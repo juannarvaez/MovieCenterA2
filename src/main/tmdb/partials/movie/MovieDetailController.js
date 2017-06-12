@@ -11,9 +11,11 @@ define( [ 'angular',
             $scope.view   = {
                 details: {},
                 images: config.apiImg,
+                actor: {},
             };
 
             var api = TMDBAPIService.Movie();
+
             api.movie.movie($routeParams.id).then( function ( response ) {
                 $scope.view.details = response.data;
                 console.log($scope.view.details);
@@ -47,6 +49,37 @@ define( [ 'angular',
 
                 });
 
+                
+
+            }
+
+            $scope.showActor= function(id_actor){
+
+               
+                for (var i in $scope.view.details.credits.cast){
+                    if ($scope.view.details.credits.cast[i].id == id_actor) {
+                        $scope.view.actor = $scope.view.details.credits.cast[i];
+                        console.log($scope.view.actor);
+                        break;
+                    }
+                }
+
+                console.log( $scope.view.actor);
+
+                console.log("url(https:"+ $scope.view.images + $scope.view.actor.profile_path +")");
+
+                $("#actorDetailPanel").css({
+                   'background-image': "url(https:"+ $scope.view.images + $scope.view.actor.profile_path +")",
+                   'background-repeat': 'no-repeat',
+                   'display':'block',
+                });
+                
+            }
+
+            $scope.closeActorDetail=function(){
+                 $("#actorDetailPanel").css({
+                   'display':'none',
+                });
             }
 
         };

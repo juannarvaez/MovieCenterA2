@@ -129,6 +129,8 @@
 	    		</iframe>
 	    	</div>	
     	</div>
+    	
+    	<br>
     	<br>
  		<!-- ========================= ACTORES DE PELICULA  ======================= -->
 		<div align="center">
@@ -140,15 +142,17 @@
 			position: relative;
 			padding: 0px;
 			width: 73%;
-			left: 14%;
+			left: 14.5%;
 			/*outline: 1px solid red;*/
 			">
-    		<div  ng-repeat="actor in view.details.credits.cast | limitTo: 10" style="
+			
+    		<div  ng-click="showActor(actor.id)" ng-repeat="actor in view.details.credits.cast | limitTo: 10" style="
     		 	width:  18.1%;
     		 	padding-top: 14.1%;
     		 	background-image: url({{'https:'}}{{view.images}}{{actor.profile_path}});
     		 	float: left;
-    		 	margin-left: 7px;
+    		 	margin-left: 5px;
+    		 	margin-top: 5px;
     		 	background-size: 100px 150px;
     		 	background-position: 0px -10px;
     		 	background-repeat: no-repeat;
@@ -179,8 +183,31 @@
     			</div>	
     			
 			</div>
+			
 		</div>
 	
+	</div>
+
+	<div id="actorDetailPanel" 
+		style="
+			position: absolute;
+			width: 70%; 
+			background-color: white; 
+			height: 450px; 
+			display: none;
+			left: 15%;
+			top: 10%;
+
+		">
+		<div style="
+					width: 50%;
+					
+				 ">
+			
+		</div>
+		<button ng-click="closeActorDetail()">
+			X
+		</button>
 	</div>
     	
     

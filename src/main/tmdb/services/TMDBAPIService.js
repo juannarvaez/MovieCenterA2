@@ -91,6 +91,8 @@ define( [ 'angular',
                 });
             };
 
+          
+
             this.GetCachedService = function( serviceName, instantiateFunction ) {
 
                 if ( this.ServiceCache[serviceName] !== undefined ) {
@@ -107,6 +109,8 @@ define( [ 'angular',
 
                 return undefined;
             };
+
+
 
             this._normalizeEndpoint = function( version ) {
                 var config = angular.module("config");
