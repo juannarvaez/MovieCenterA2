@@ -11,7 +11,7 @@ define( [ 'angular',
 
             var internal = {
                 assignColor: function( val ) {
-                    console.log(val);
+                    
                     if( val >= 7 ){
                         $scope.view.color = 'green';
                     }
