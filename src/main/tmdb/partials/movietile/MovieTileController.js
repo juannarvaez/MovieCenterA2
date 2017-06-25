@@ -10,7 +10,7 @@ define( [ 'angular',
             $scope.view   = {
                 images: config.apiImg
             };
-            console.log('movie tile');
+            
 
             $scope.clickOne = function(){
                console.log("en el click one");

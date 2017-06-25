@@ -31,10 +31,19 @@ define( [ 'angular',
             /*
              * We support very little of this API, it has many many options.
              */
+            this._normalizeEndpoint = function( version ) {
+                var config = angular.module("config");
+
+                return {'url': config.apiUrl + version,
+                        'apiKey': config.apiKey};
+            };
+
             this.Discover = function () {
                 return this.GetCachedService( "discover", function () {
                     var serviceVersion = "3";
                     var serviceBase    = this._normalizeEndpoint( serviceVersion, "discover" );
+
+                    console.log(serviceBase);
 
                     /* http://docs.themoviedb.apiary.io/reference/discover/discovermovie */
                     var movieList = function ( sortBy, page, includeAdult ) {
@@ -48,6 +57,7 @@ define( [ 'angular',
                             includeAdult = 'false';
                         }
                         var uri = serviceBase.url + '/discover/movie?page=' + page + '&include_adult=' + includeAdult + '&sort_by=' + sortBy + '&api_key=' + serviceBase.apiKey;
+                        console.log("uri: "+uri);
                         return $http.get( uri );
                     };
 
@@ -112,12 +122,7 @@ define( [ 'angular',
 
 
 
-            this._normalizeEndpoint = function( version ) {
-                var config = angular.module("config");
-
-                return {'url': config.apiUrl + version,
-                        'apiKey': config.apiKey};
-            };
+            
         };
 
         TMDBAPIService.$inject = [ '$rootScope', '$http', '$timeout', '$resource', 'localStorageService', '$location' ];
